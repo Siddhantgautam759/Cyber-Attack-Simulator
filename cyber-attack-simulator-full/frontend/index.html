@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Cyber Attack Simulator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">Cyber<span>Sim</span></div>
+
+  <nav class="menu">
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('sql')">SQL</a>
+    <a onclick="showPage('xss')">XSS</a>
+    <a onclick="showPage('brute')">Brute</a>
+    <a onclick="showPage('phish')">Phishing</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <h1>Cyber Attack Simulator</h1>
+  <p class="lead">Learn attacks safely with interactive demos.</p>
+
+  <div class="grid">
+    <div class="card clickable" onclick="showPage('sql')">
+      <div class="card-title">SQL Injection</div>
+      <div class="card-desc">Explore query vulnerabilities.</div>
+    </div>
+
+    <div class="card clickable" onclick="showPage('xss')">
+      <div class="card-title">XSS Simulation</div>
+      <div class="card-desc">Render unsafe scripts safely.</div>
+    </div>
+
+    <div class="card clickable" onclick="showPage('brute')">
+      <div class="card-title">Brute Force</div>
+      <div class="card-desc">Password cracking visualizer.</div>
+    </div>
+
+    <div class="card clickable" onclick="showPage('phish')">
+      <div class="card-title">Phishing Detector</div>
+      <div class="card-desc">Learn how phishing works.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SQL -->
+<section id="sql" class="page">
+  <h2>SQL Injection Demo</h2>
+
+  <div class="panel">
+    <label>Username</label>
+    <input id="sqlUser" placeholder="admin">
+
+    <label>Password</label>
+    <input id="sqlPass" placeholder="1234">
+
+    <button onclick="runSQL()">Execute</button>
+
+    <pre id="sqlOutput" class="output"></pre>
+  </div>
+</section>
+
+<!-- XSS -->
+<section id="xss" class="page">
+  <h2>XSS Simulator</h2>
+
+  <div class="panel">
+    <textarea id="xssInput" placeholder="<script>alert('XSS')</script>"></textarea>
+    <button onclick="renderXSS()">Render</button>
+
+    <div id="xssOut" class="output"></div>
+  </div>
+</section>
+
+<!-- BRUTE FORCE -->
+<section id="brute" class="page">
+  <h2>Brute Force Attack Simulator</h2>
+
+  <div class="panel">
+    <label>Enter Password</label>
+    <input id="brutePassword" placeholder="e.g. A1@b">
+
+    <button onclick="startBrute()">Start</button>
+    <button onclick="stopBrute()">Stop</button>
+
+    <label>Current Attempt</label>
+    <div id="bruteAttempt" class="output small"></div>
+
+    <label>Progress</label>
+    <div class="progressbar"><div id="bruteProgressFill" class="progressfill"></div></div>
+    <div id="bruteProgressText" class="muted">0%</div>
+
+    <pre id="bruteLog" class="output small muted" style="margin-top: 12px;"></pre>
+  </div>
+</section>
+
+<!-- PHISHING -->
+<section id="phish" class="page">
+  <h2>Phishing Awareness</h2>
+  <div class="panel">
+    <p id="phishText">Your bank account needs urgent verification.</p>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
