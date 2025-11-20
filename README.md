@@ -1,5 +1,4 @@
-
-#CyberSim – Cyber Attack Simulator
+CyberSim – Cyber Attack Simulator
 
 A fully interactive, frontend-based cybersecurity learning platform featuring live demonstrations of common web attacks. Built using HTML, CSS, JavaScript, and designed with a premium cyberpunk UI.
 
